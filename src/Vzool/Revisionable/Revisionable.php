@@ -1,4 +1,4 @@
-<?php namespace Venturecraft\Revisionable;
+<?php namespace Vzool\Revisionable;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Revisionable
- * @package Venturecraft\Revisionable
+ * @package Vzool\Revisionable
  */
 class Revisionable extends Eloquent
 {
