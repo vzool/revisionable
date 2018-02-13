@@ -23,7 +23,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Vzoool\\Revisionable": "src/"
+            "Vzool\\Revisionable": "src/"
         }
     }
 }
