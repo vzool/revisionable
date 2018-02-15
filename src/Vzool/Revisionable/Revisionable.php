@@ -139,6 +139,16 @@ class Revisionable extends Eloquent
 
             $revisions = array();
 
+            $REMOTE_ADDR = "127.0.0.1";
+
+            if($_SERVER){
+                
+                if(isset($_SERVER["REMOTE_ADDR"])){
+
+                    $REMOTE_ADDR = $_SERVER["REMOTE_ADDR"];
+                }
+            }
+
             foreach ($changes_to_record as $key => $change) {
                 $revisions[] = array(
                     'revisionable_type'     => $this->getMorphClass(),
@@ -147,7 +157,7 @@ class Revisionable extends Eloquent
                     'old_value'             => array_get($this->originalData, $key),
                     'new_value'             => $this->updatedData[$key],
                     'user_id'               => $this->getSystemUserId(),
-                    'ip'                    => $_SERVER["REMOTE_ADDR"],
+                    'ip'                    => $REMOTE_ADDR,
                     'created_at'            => new \DateTime(),
                     'updated_at'            => new \DateTime(),
                 );
